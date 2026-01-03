@@ -13,24 +13,45 @@ pnpm dev
 # or
 bun dev
 ```
+Setup Instructions
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Clone the repo
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+git clone https://github.com/your-username/Zybo-Project.git
+cd Zybo-Project
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-## Learn More
+Install dependencies
 
-To learn more about Next.js, take a look at the following resources:
+npm install
+# or
+yarn install
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Add environment variables
+Create a .env.local file in the root:
 
-## Deploy on Vercel
+NEXTAUTH_SECRET=your_secret
+NEXTAUTH_URL=http://localhost:3000
+API_URL=https:https://skilltestnextjs.evidam.zybotechlab.com
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Run the project
+
+npm run dev
+# or
+yarn dev
+
+Tech Decisions
+
+Next.js – Fast, server-side rendering, easy routing
+
+Tailwind CSS – Quick styling with utility classes
+
+NextAuth.js – Simple and secure authentication
+
+GSAP – Smooth animations for hover and transitions
+
+Axios – Handles API calls cleanly
+
+Component-based – Reusable and organized UI
