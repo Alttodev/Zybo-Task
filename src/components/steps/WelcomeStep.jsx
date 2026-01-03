@@ -26,7 +26,8 @@ export default function WelcomeStep({ phone, onSuccess }) {
       phone,
       name,
       isRegister: true,
-      redirect: false,
+      redirect: true,
+      callbackUrl: "/home",
     });
 
     if (res?.ok) {
