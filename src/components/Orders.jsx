@@ -9,40 +9,41 @@ export default function OrdersCard({ orders }) {
   }
   return (
     <>
-      {orders?.orders?.map((item, index) => (
+      {orderList.map((item, index) => (
         <Card
           key={item?.order_id || index}
           className="bg-[#FFFFFF14] border-none rounded-2xl p-4 mb-6 w-full"
         >
-          <CardContent className="flex justify-between p-0">
-            <div className="flex gap-6">
-              <div className="rounded-xl overflow-hidden flex shrink-0">
+          <CardContent className="flex flex-col sm:flex-row justify-between p-0 gap-4">
+            {/* Left: Image + Info */}
+            <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 flex-1">
+              {/* Image */}
+              <div className="rounded-xl overflow-hidden flex shrink-0 w-full sm:w-27 h-17">
                 <Image
-                  src={item?.product_image}
+                  src={item?.product_image || "/assets/sample.png"}
                   alt={item?.product_name}
                   width={110}
                   height={70}
-                  className="object-fill h-25"
+                  className="object-cover w-full h-full"
                 />
               </div>
-              <div className="flex flex-col items-start gap-2 h-full">
+
+              {/* Info */}
+              <div className="flex flex-col items-start gap-1 sm:gap-2 h-full">
                 <h3 className="text-white font-semibold text-base leading-tight">
                   {item?.product_name}
                 </h3>
-
-                <p className="text-sm text-gray-400 flex-1">{item?.order_id}</p>
-
-                <p className="text-gray-400 text-[13px]">
-                  {item?.created_date}
-                </p>
+                <p className="text-sm text-gray-400">{item?.order_id}</p>
+                <p className="text-gray-400 text-[13px]">{item?.created_date}</p>
               </div>
             </div>
 
-            <div className=" flex flex-row gap-2 text-right">
+            {/* Right: Price */}
+            <div className="flex flex-row sm:flex-col gap-2 text-right items-end sm:items-start">
               <p className="text-white text-sm font-semibold">
                 ₹{Number(item?.product_price).toLocaleString("en-IN")}
               </p>
-              <p className="text-[#FFFFFF99]  text-xs pt-1 line-through">
+              <p className="text-[#FFFFFF99] text-xs line-through">
                 ₹{Number(item?.product_mrp).toLocaleString("en-IN")}
               </p>
             </div>
