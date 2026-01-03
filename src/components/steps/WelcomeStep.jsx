@@ -7,11 +7,10 @@ import FormWidget from "../widgets/FormWidget";
 import TextInput from "../forminputs/TextInput";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { registerSchema } from "@/lib/validation";
-import { useRouter } from "next/navigation";
-import { toastError, toastSuccess } from "@/lib/toast";
+
 
 export default function WelcomeStep({ phone, onSuccess }) {
-  const router = useRouter();
+
   const {
     handleSubmit,
     control,
