@@ -22,20 +22,13 @@ export default function WelcomeStep({ phone, onSuccess }) {
   });
 
   const onSubmit = async ({ name }) => {
-    const res = await signIn("credentials", {
+    await signIn("credentials", {
       phone,
       name,
       isRegister: true,
       redirect: true,
       callbackUrl: "/home",
     });
-
-    if (res?.ok) {
-      toastSuccess("Login successfully");
-      router.push("/home");
-    } else {
-      toastError(res?.error || "Login failed");
-    }
   };
 
   return (
