@@ -19,13 +19,18 @@ export default function WelcomeStep({ phone, onSuccess }) {
   });
 
   const onSubmit = async ({ name }) => {
-    await signIn("credentials", {
+    const res = await signIn("credentials", {
       phone,
       name,
       isRegister: true,
       redirect: true,
       callbackUrl: "/home",
     });
+    if (res?.error) {
+      toastError(res.error);
+    } else {
+      toastSuccess(res?.message || "Login Successful");
+    }
   };
 
   return (
