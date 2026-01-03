@@ -96,7 +96,7 @@ function CardProduct({ product }) {
       router.push(`/success/${product.id}`);
       toastSuccess(res?.message);
     } catch (error) {
-      toastError("Purchase failed");
+      toastError(error.response.data.error);
     } finally {
       setIsBuying(false);
     }
