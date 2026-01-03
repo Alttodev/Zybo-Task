@@ -29,7 +29,7 @@ export default function WelcomeStep({ phone, onSuccess }) {
     if (res?.error) {
       toastError(res.error);
     } else {
-      toastSuccess(res?.message || "Login Successful");
+    toastSuccess(res?.user?.message || "Login Successful");
     }
   };
 

@@ -55,6 +55,7 @@ export const authOptions = {
             name: verifyData.name ?? null,
             phone: credentials.phone,
             accessToken: verifyData.token?.access ?? null,
+            message: verifyData.message,
           };
         } catch (err) {
           console.error("Auth error:", err.response?.data || err.message);
