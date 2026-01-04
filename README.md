@@ -1,18 +1,5 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
-
-First, run the development server:
-
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 Setup Instructions
 
 Clone the repo
@@ -24,8 +11,6 @@ cd Zybo-Project
 Install dependencies
 
 npm install
-# or
-yarn install
 
 
 Add environment variables
@@ -39,19 +24,22 @@ API_URL=https:https://skilltestnextjs.evidam.zybotechlab.com
 Run the project
 
 npm run dev
-# or
-yarn dev
+
 
 Tech Decisions
 
-Next.js – Fast, server-side rendering, easy routing
+Next.js – Fast performance with server-side rendering and easy file-based routing
 
-Tailwind CSS – Quick styling with utility classes
+Tailwind CSS – Quick and consistent styling using utility-first classes
 
-NextAuth.js – Simple and secure authentication
+NextAuth.js – Simple and secure authentication handling
 
-GSAP – Smooth animations for hover and transitions
+React Hook Form – Efficient form handling with minimal re-renders and built-in validation
 
-Axios – Handles API calls cleanly
+Zustand – Lightweight and easy global state management
 
-Component-based – Reusable and organized UI
+GSAP – Smooth animations for hover effects and transitions
+
+Axios – Clean and reliable API request handling
+
+Component-based Architecture – Reusable, modular, and well-organized UI components
