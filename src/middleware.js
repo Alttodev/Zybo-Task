@@ -7,7 +7,13 @@ export async function middleware(request) {
     secret: process.env.NEXTAUTH_SECRET,
   });
 
-  if (!token) {
+  const { pathname } = request.nextUrl;
+
+  if (token && pathname === "/") {
+    return NextResponse.redirect(new URL("/home", request.url));
+  }
+
+  if (!token && pathname !== "/") {
     return NextResponse.redirect(new URL("/", request.url));
   }
 
