@@ -3,6 +3,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import { purchaseProduct } from "@/app/api/auth/[...nextauth]/server";
 import { toastError, toastSuccess } from "@/lib/toast";
@@ -102,12 +103,15 @@ function CardProduct({ product }) {
     }
   };
 
-  useEffect(() => {
-    gsap.set([sizeRef.current, colorRef.current, buttonRef.current], {
-      opacity: 0,
-      y: 20,
-    });
-  }, []);
+  useGSAP(
+    () => {
+      gsap.set([sizeRef.current, colorRef.current, buttonRef.current], {
+        opacity: 0,
+        y: 20,
+      });
+    },
+    { scope: bgRef }
+  );
 
   return (
     <Card
